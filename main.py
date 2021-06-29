@@ -1,7 +1,7 @@
 def inputbox(pos, text, active):
     input_box = Rect(pos, (200, 40))
     
-    if pygame.mouse.get_pressed()[0]: # active the textbox if click in it
+    if pygame.mouse.get_pressed()[0]: # active the textbox by clicking on it
         if input_box.collidepoint(pygame.mouse.get_pos()):
             active = True
         else:
