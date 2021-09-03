@@ -13,8 +13,8 @@ def inputbox(pos, text, active):
                 text = text[:-1] # delete last character
             else:
                 try:
-                    ord(event.unicode) # raises error if not a character (e.g. Ctrl)
-                                       # so that no character is written
+                    ord(event.unicode) # raise error if not a printable character (e.g. Ctrl)
+                                       # so that no strange symbol is written instead
                     text += event.unicode
                 except:
                     pass
@@ -55,6 +55,7 @@ while True:
             exit()
 
     screen.fill((255, 255, 255))
+
     text, active = inputbox((20, 20), text, active)
 
     pygame.display.flip()
